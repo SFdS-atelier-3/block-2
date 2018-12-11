@@ -1,0 +1,23 @@
+# non-broadcasting version
+assignment_matrix = np.zeros((n_samples, K), dtype='bool')
+
+for this_cluster in range(K):
+    assignment_matrix[:,this_cluster] = assignments==this_cluster 
+
+print(assignment_matrix[:4,:])
+
+print(assignments[:4])
+
+# A quick refresher for broadcasting:
+
+
+a = np.array([[0], [10], [15]])
+b = np.array([[10, 15, 20]])
+print(a), print(b)
+print(a==b)
+
+# broadcasting version:
+
+assignment_matrix_elegant = assignments.reshape([-1,1])==np.arange(5)
+
+print(np.all(assignment_matrix == assignment_matrix_elegant))
