@@ -1,0 +1,6 @@
+n_iter = 100
+for i in range(n_iter):
+    assignment_matrix = assignments[:, np.newaxis] == np.arange(K)
+    cluster_centers = assignment_matrix.T.dot(X) / assignment_matrix.sum(0)[:, np.newaxis]
+    distances = euclidean_distances(X, cluster_centers)
+    assignments = distances.argmin(axis=1)

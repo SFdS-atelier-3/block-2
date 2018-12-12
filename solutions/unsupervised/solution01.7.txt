@@ -1,0 +1,8 @@
+kmeans =  KMeans(n_clusters=5).fit(X)
+
+labels = kmeans.predict(X)
+
+plt.figure(figsize=(10, 10))
+for i in range(K):
+    cluster = X[labels == i] 
+    plt.plot(*cluster.T, 'o')

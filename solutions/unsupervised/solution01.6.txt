@@ -1,0 +1,4 @@
+plt.figure(figsize=(10, 10))
+for i in range(K):
+    cluster = X[assignments == i] 
+    plt.plot(*cluster.T, 'o')

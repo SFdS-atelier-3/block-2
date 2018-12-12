@@ -1,0 +1,5 @@
+from sklearn.metrics import euclidean_distances
+
+distances = euclidean_distances(X, cluster_centers)
+
+distances.shape
